@@ -1,0 +1,59 @@
+// Name: Payal Priya
+// Question 7: Write a class with four methods for 1D array (input, output1, output2, reverse)
+
+import java.util.Scanner;
+
+public class Q7_Array {
+
+    int arr[] = new int[5]; // array of size 5
+
+    // Method to take input
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter 5 elements:");
+        for(int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+    }
+
+    // Method to display array (normal order)
+    void output1() {
+        System.out.print("Array elements: ");
+        for(int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // Method to display array in reverse order (without changing array)
+    void output2() {
+        System.out.print("Reverse order: ");
+        for(int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // Method to reverse the array (actual swapping)
+    void reverse() {
+        for(int i = 0; i < arr.length / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Q7_Array obj = new Q7_Array();
+
+        obj.input();     // take input
+        obj.output1();   // display normal
+        obj.output2();   // display reverse (without changing)
+
+        obj.reverse();   // reverse array
+
+        System.out.println("After reversing:");
+        obj.output1();   // display reversed array
+    }
+}
