@@ -1,0 +1,46 @@
+// Name: Payal Priya
+// Question 22: Inheritance using abstract class and interface
+
+// Abstract class (cannot be instantiated)
+abstract class Animal {
+
+    // Abstract method (no body)
+    abstract void sound();
+
+    // Normal method
+    void eat() {
+        System.out.println("Animal eats food");
+    }
+}
+
+// Interface
+interface Test {
+    void show(); // abstract method
+}
+
+// Child class inheriting abstract class and implementing interface
+class Dog extends Animal implements Test {
+
+    // Implement abstract method from Animal
+    void sound() {
+        System.out.println("Dog barks");
+    }
+
+    // Implement method from interface
+    public void show() {
+        System.out.println("Interface method executed");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+
+        // Create object of Dog class
+        Dog d = new Dog();
+
+        d.sound(); // call abstract method
+        d.eat();   // call normal method
+        d.show();  // call interface method
+    }
+}
