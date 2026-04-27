@@ -1,0 +1,52 @@
+// Name: Payal Priya
+// Question 5: Test time addition using hours and minutes
+
+class TimeHM {
+
+    int hours, minutes;
+
+    // Method to take input
+    void input(int h, int m) {
+        hours = h;
+        minutes = m;
+    }
+
+    // Method to add two time objects
+    TimeHM add(TimeHM t) {
+
+        TimeHM temp = new TimeHM();
+
+        temp.minutes = this.minutes + t.minutes;
+
+        // convert minutes to hours
+        temp.hours = this.hours + t.hours + (temp.minutes / 60);
+        temp.minutes = temp.minutes % 60;
+
+        return temp;
+    }
+
+    // Display method
+    void display() {
+        System.out.println(hours + " hr " + minutes + " min");
+    }
+}
+
+public class Q5_TestTime {
+    public static void main(String[] args) {
+
+        // Create objects
+        TimeHM t1 = new TimeHM();
+        TimeHM t2 = new TimeHM();
+
+        // Input values
+        t1.input(2, 45);
+        t2.input(1, 30);
+
+        // Add time
+        TimeHM result = t1.add(t2);
+
+        // Display result
+        System.out.print("Total Time = ");
+        result.display();
+    }
+}
