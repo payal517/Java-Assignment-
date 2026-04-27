@@ -1,0 +1,40 @@
+// Name: Payal Priya
+// Question 9: Print 1–100 using three classes (without thread)
+
+class A {
+    void print() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("A: " + i);
+        }
+    }
+}
+
+class B {
+    void print() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("B: " + i);
+        }
+    }
+}
+
+class C {
+    void print() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println("C: " + i);
+        }
+    }
+}
+
+public class Q9_WithoutThread {
+    public static void main(String[] args) {
+
+        A a = new A();
+        B b = new B();
+        C c = new C();
+
+        // Sequential execution
+        a.print();
+        b.print();
+        c.print();
+    }
+}
