@@ -1,0 +1,64 @@
+// Name: Payal Priya
+//Enrollment No:240076
+// Question 14: Matrix Addition using Swing
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public class MatrixGUI {
+    public static void main(String[] args) {
+
+        JFrame f = new JFrame("Matrix Addition");
+
+        JTextField a[][] = new JTextField[2][2];
+        JTextField b[][] = new JTextField[2][2];
+        JTextField c[][] = new JTextField[2][2];
+
+        JButton add = new JButton("Add");
+
+        int x = 50, y = 50;
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+
+                a[i][j] = new JTextField();
+                b[i][j] = new JTextField();
+                c[i][j] = new JTextField();
+                c[i][j].setEditable(false);
+
+                a[i][j].setBounds(x + j*50, y + i*50, 40, 30);
+                b[i][j].setBounds(x + 150 + j*50, y + i*50, 40, 30);
+                c[i][j].setBounds(x + 300 + j*50, y + i*50, 40, 30);
+
+                f.add(a[i][j]);
+                f.add(b[i][j]);
+                f.add(c[i][j]);
+            }
+        }
+
+        add.setBounds(200, 200, 100, 30);
+        f.add(add);
+
+        add.addActionListener(e -> {
+            try {
+                for (int i = 0; i < 2; i++) {
+                    for (int j = 0; j < 2; j++) {
+
+                        int val1 = Integer.parseInt(a[i][j].getText());
+                        int val2 = Integer.parseInt(b[i][j].getText());
+
+                        int sum = val1 + val2;
+                        c[i][j].setText("" + sum);
+                    }
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(f, "Please enter valid numbers!");
+            }
+        });
+
+        f.setSize(500, 350);
+        f.setLayout(null);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // important
+        f.setVisible(true);
+    }
+}
