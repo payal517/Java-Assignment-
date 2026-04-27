@@ -1,0 +1,22 @@
+// Name: Payal Priya
+// Question 3: Test the result by creating objects in main class
+
+public class Q3_TestDistance {
+    public static void main(String[] args) {
+
+        // Create objects
+        Distance d1 = new Distance();
+        Distance d2 = new Distance();
+
+        // Input values
+        d1.input(2, 50, 5);
+        d2.input(3, 75, 8);
+
+        // Add distances
+        Distance result = d1.add(d2);
+
+        // Display result
+        System.out.print("Total Distance = ");
+        result.display();
+    }
+}
