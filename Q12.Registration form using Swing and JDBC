@@ -1,0 +1,92 @@
+// Name: Payal Priya
+// Question 12: Registration form using Swing and JDBC
+
+import javax.swing.*;
+import java.awt.event.*;
+import java.sql.*;
+
+public class Q12_Registration {
+
+    public static void main(String[] args) {
+
+        JFrame f = new JFrame("Registration Form");
+
+        // Labels
+        JLabel l1 = new JLabel("Name:");
+        JLabel l2 = new JLabel("Email:");
+        JLabel l3 = new JLabel("Age:");
+
+        // Text Fields
+        JTextField name = new JTextField();
+        JTextField email = new JTextField();
+        JTextField age = new JTextField();
+
+        // Button
+        JButton submit = new JButton("Submit");
+
+        // Set positions
+        l1.setBounds(50, 50, 80, 30);
+        name.setBounds(140, 50, 150, 30);
+
+        l2.setBounds(50, 100, 80, 30);
+        email.setBounds(140, 100, 150, 30);
+
+        l3.setBounds(50, 150, 80, 30);
+        age.setBounds(140, 150, 150, 30);
+
+        submit.setBounds(120, 220, 100, 30);
+
+        // Add components
+        f.add(l1); f.add(name);
+        f.add(l2); f.add(email);
+        f.add(l3); f.add(age);
+        f.add(submit);
+
+        // Button Action
+        submit.addActionListener(e -> {
+            try {
+                // Basic validation
+                if(name.getText().isEmpty() || email.getText().isEmpty() || age.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(f, "Please fill all fields!");
+                    return;
+                }
+
+                // Database connection
+                Connection con = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/test",
+                        "root",
+                        "password"
+                );
+
+                // Insert query
+                PreparedStatement ps = con.prepareStatement(
+                        "insert into student values(?,?,?)"
+                );
+
+                ps.setString(1, name.getText());
+                ps.setString(2, email.getText());
+                ps.setInt(3, Integer.parseInt(age.getText()));
+
+                ps.executeUpdate();
+
+                JOptionPane.showMessageDialog(f, "Data Saved Successfully!");
+
+                con.close();
+
+                // Clear fields after submit
+                name.setText("");
+                email.setText("");
+                age.setText("");
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(f, "Error: " + ex.getMessage());
+            }
+        });
+
+        // Frame settings
+        f.setSize(350, 350);
+        f.setLayout(null);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
+    }
+}
