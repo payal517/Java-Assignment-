@@ -1,0 +1,84 @@
+// Name: Payal Priya
+// Question 8: Perform matrix operations (transpose, addition, row sum, column sum, diagonal sum)
+
+public class Q8_Matrix {
+
+    int a[][] = {
+        {1, 2},
+        {3, 4}
+    };
+
+    int b[][] = {
+        {5, 6},
+        {7, 8}
+    };
+
+    // Matrix Addition
+    void addition() {
+        int c[][] = new int[2][2];
+
+        System.out.println("Matrix Addition:");
+        for(int i = 0; i < 2; i++) {
+            for(int j = 0; j < 2; j++) {
+                c[i][j] = a[i][j] + b[i][j];
+                System.out.print(c[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Transpose of matrix A
+    void transpose() {
+        System.out.println("Transpose of Matrix A:");
+        for(int i = 0; i < 2; i++) {
+            for(int j = 0; j < 2; j++) {
+                System.out.print(a[j][i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    // Sum of rows of matrix A
+    void rowSum() {
+        System.out.println("Row Sum:");
+        for(int i = 0; i < 2; i++) {
+            int sum = 0;
+            for(int j = 0; j < 2; j++) {
+                sum += a[i][j];
+            }
+            System.out.println("Row " + (i+1) + " sum = " + sum);
+        }
+    }
+
+    // Sum of columns of matrix A
+    void columnSum() {
+        System.out.println("Column Sum:");
+        for(int j = 0; j < 2; j++) {
+            int sum = 0;
+            for(int i = 0; i < 2; i++) {
+                sum += a[i][j];
+            }
+            System.out.println("Column " + (j+1) + " sum = " + sum);
+        }
+    }
+
+    // Diagonal sum of matrix A
+    void diagonalSum() {
+        int sum = 0;
+        for(int i = 0; i < 2; i++) {
+            sum += a[i][i];
+        }
+        System.out.println("Diagonal sum = " + sum);
+    }
+
+    public static void main(String[] args) {
+
+        Q8_Matrix obj = new Q8_Matrix();
+
+        obj.addition();
+        obj.transpose();
+        obj.rowSum();
+        obj.columnSum();
+        obj.diagonalSum();
+    }
+}
