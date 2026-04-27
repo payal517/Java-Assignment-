@@ -1,0 +1,35 @@
+// Name: Payal Priya
+// Question 21: File handling program (Write and Read from file)
+
+import java.io.*; // for file handling classes
+
+public class FileDemo {
+    public static void main(String[] args) {
+
+        try {
+            // Step 1: Create and write into file
+            FileWriter fw = new FileWriter("test.txt"); // creates file
+            fw.write("Hello Java File Handling");       // write data
+            fw.close(); // close file
+
+            System.out.println("Data written successfully");
+
+            // Step 2: Read from file
+            FileReader fr = new FileReader("test.txt");
+            int ch;
+
+            System.out.println("Reading file content:");
+
+            // read character by character
+            while ((ch = fr.read()) != -1) {
+                System.out.print((char) ch);
+            }
+
+            fr.close(); // close file
+
+        } catch (Exception e) {
+            // handle errors
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
