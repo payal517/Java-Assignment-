@@ -1,82 +1,50 @@
-# Java Programming Lab – Assignment
+# Java Lab Assignment
 
- **Name:** Payal Priya
+**Name:** Payal Priya
+**Enrollment**:240076
+**Batch**:B2
 
----
+## About this repository
 
-## 📌 Overview
+This repository contains all my Java lab assignment programs.
+I have tried to cover different topics like basic programming, arrays, matrices, GUI, multithreading, exceptions, file handling, etc.
 
-This repository contains a collection of Java programs (and some C programs) covering fundamental programming concepts like OOP, arrays, matrices, GUI (Swing), multithreading, file handling, packages, and exception handling.
-
-The goal of this assignment is to build a strong understanding of core programming concepts through practical implementation.
-
----
-
-## 🧠 Topics Covered
-
-* Classes & Objects
-* Arrays (1D & 2D)
-* Matrix Operations
-* Time & Distance Calculations
-* Multithreading
-* Java Swing (GUI)
-* JDBC Connectivity
-* Packages & Subpackages
-* Exception Handling
-* File Handling
-* Inheritance, Abstract Classes & Interfaces
-* Basic C Programs
+Most of the programs are written in a simple way so that they are easy to understand and run.
 
 ---
 
-## 📂 Folder Structure
+## Programs included
 
-```
-Java-Assignment/
-│
-├── Q1_Calculator.java
-├── Q2_Distance.java
-├── Q3_TestDistance.java
-├── Q4_Time.java
-├── Q5_TestTime.java
-│
-├── Q6_C_Programs/
-│   ├── factorial.c
-│   ├── armstrong.c
-│   ├── palindrome.c
-│   ├── fibonacci.c
-│   └── pattern.c
-│
-├── Q7_Array.java
-├── Q8_Matrix.java
-│
-├── Q9_Multithreading/
-│   ├── Q9_WithoutThread.java
-│   ├── Q9_WithThread.java
-│   └── Q9_Runnable.java
-│
-├── Q10_JoinDemo.java
-├── Q11_AdditionGUI.java
-├── Q12_Registration.java
-├── Q13_CalculatorGUI.java
-├── Q14_MatrixGUI.java
-├── Q15_ShapesGUI.java
-├── Q16_PaintApp.java
-│
-├── Q17_Package/
-├── Q18_SubPackage/
-│
-├── Q19_ExceptionDemo.java
-├── Q20_AgeTest.java
-├── Q21_FileDemo.java
-├── Q22_InheritanceDemo.java
-│
-└── README.md
-
-
-
-
-
+1. Basic calculator using class and object
+2. Distance addition (m, cm, mm)
+3. Testing distance using objects
+4. Time calculation (hours, minutes, seconds)
+5. Time calculation (hours and minutes)
+6. Programs like factorial, armstrong, palindrome, fibonacci and pattern
+7. 1D array operations (input, output, reverse)
+8. Matrix operations (addition, transpose, sums)
+9. Multithreading programs
+10. Thread synchronization using join
+11. Addition using Swing
+12. Registration form with JDBC
+13. Calculator using Swing
+14. Matrix addition using Swing
+15. Shapes using buttons
+16. Paint application using mouse events
+17. Package creation
+18. Sub-package creation
+19. Exception handling
+20. User defined exception
+21. File handling
+22. Inheritance using abstract class and interface
 
 ---
+
+## Final Note
+
+This assignment helped me understand how Java works in practical.
+I got to practice different concepts and improve my coding skills.
+
+---
+
 
