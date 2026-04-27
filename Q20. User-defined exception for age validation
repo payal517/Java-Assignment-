@@ -1,0 +1,35 @@
+// Name: Payal Priya
+// Question 20: User-defined exception for age validation
+
+import java.util.Scanner;
+
+// Custom exception class
+class InvalidAgeException extends Exception {
+    InvalidAgeException(String msg) {
+        super(msg); // pass message to Exception class
+    }
+}
+
+public class AgeTest {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+
+        try {
+            // Check condition
+            if (age < 18) {
+                throw new InvalidAgeException("Age must be 18+");
+            } else {
+                System.out.println("Valid age");
+            }
+        } catch (InvalidAgeException e) {
+            // Handle custom exception
+            System.out.println(e.getMessage());
+        }
+
+        sc.close(); // good practice
+    }
+}
