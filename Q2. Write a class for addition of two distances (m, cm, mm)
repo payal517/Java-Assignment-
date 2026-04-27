@@ -1,0 +1,37 @@
+// Name: Payal Priya
+// Question 2: Write a class for addition of two distances (m, cm, mm)
+
+class Distance {
+
+    int meter, centimeter, millimeter;
+
+    // Method to take input
+    void input(int m, int cm, int mm) {
+        meter = m;
+        centimeter = cm;
+        millimeter = mm;
+    }
+
+    // Method to add two distances
+    Distance add(Distance d) {
+
+        Distance temp = new Distance();
+
+        temp.millimeter = this.millimeter + d.millimeter;
+
+        // convert mm to cm
+        temp.centimeter = this.centimeter + d.centimeter + (temp.millimeter / 10);
+        temp.millimeter = temp.millimeter % 10;
+
+        // convert cm to meter
+        temp.meter = this.meter + d.meter + (temp.centimeter / 100);
+        temp.centimeter = temp.centimeter % 100;
+
+        return temp;
+    }
+
+    // Display method
+    void display() {
+        System.out.println(meter + " m " + centimeter + " cm " + millimeter + " mm");
+    }
+}
