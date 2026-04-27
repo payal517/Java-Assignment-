@@ -1,0 +1,30 @@
+// Name: Payal Priya
+// Question 9: Using Runnable interface
+
+class MyThread implements Runnable {
+
+    String name;
+
+    MyThread(String name) {
+        this.name = name;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(name + ": " + i);
+        }
+    }
+}
+
+public class Q9_Runnable {
+    public static void main(String[] args) {
+
+        Thread t1 = new Thread(new MyThread("A"));
+        Thread t2 = new Thread(new MyThread("B"));
+        Thread t3 = new Thread(new MyThread("C"));
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
