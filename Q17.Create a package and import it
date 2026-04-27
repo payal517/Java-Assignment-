@@ -1,0 +1,17 @@
+// Name: Payal Priya
+// Question 17: Create a package and import it
+
+package mypack;
+public class Class1 {
+    public void show() {
+        System.out.println("Hello from Class1");
+    }
+}
+// Main class to test the package
+import mypack.*;
+public class TestPackage {
+    public static void main(String[] args) {
+        Class1 obj = new Class1();
+        obj.show();
+    }
+}
