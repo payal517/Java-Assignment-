@@ -1,0 +1,92 @@
+// Name: Payal Priya
+//Enrollment No:240076
+// Question 15: Create a JFrame with 10 buttons. On clicking each button, draw different shapes.
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ShapesGUI extends JFrame implements ActionListener {
+
+    String shape = "";
+
+    JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b10;
+
+    ShapesGUI() {
+
+        setTitle("Shapes Frame");
+        setSize(600, 600);
+        setLayout(null);
+
+        b1 = new JButton("Circle");
+        b2 = new JButton("Rectangle");
+        b3 = new JButton("Oval");
+        b4 = new JButton("Line");
+        b5 = new JButton("Square");
+        b6 = new JButton("Round Rect");
+        b7 = new JButton("Arc");
+        b8 = new JButton("Fill Rect");
+        b9 = new JButton("Fill Oval");
+        b10 = new JButton("Clear");
+
+        JButton buttons[] = {b1,b2,b3,b4,b5,b6,b7,b8,b9,b10};
+
+        int x = 20, y = 20;
+
+        for(int i = 0; i < 10; i++) {
+            buttons[i].setBounds(x, y, 120, 30);
+            add(buttons[i]);
+            buttons[i].addActionListener(this);
+            y += 40;
+        }
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+
+        shape = e.getActionCommand();
+        repaint();
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+
+        if(shape.equals("Circle")) {
+            g.drawOval(250, 150, 100, 100);
+        }
+        else if(shape.equals("Rectangle")) {
+            g.drawRect(250, 150, 120, 80);
+        }
+        else if(shape.equals("Oval")) {
+            g.drawOval(250, 150, 150, 80);
+        }
+        else if(shape.equals("Line")) {
+            g.drawLine(250, 150, 400, 300);
+        }
+        else if(shape.equals("Square")) {
+            g.drawRect(250, 150, 100, 100);
+        }
+        else if(shape.equals("Round Rect")) {
+            g.drawRoundRect(250, 150, 120, 80, 30, 30);
+        }
+        else if(shape.equals("Arc")) {
+            g.drawArc(250, 150, 100, 100, 0, 180);
+        }
+        else if(shape.equals("Fill Rect")) {
+            g.fillRect(250, 150, 120, 80);
+        }
+        else if(shape.equals("Fill Oval")) {
+            g.fillOval(250, 150, 100, 80);
+        }
+        else if(shape.equals("Clear")) {
+            shape = "";
+            repaint();
+        }
+    }
+
+    public static void main(String[] args) {
+        new ShapesGUI();
+    }
+}
