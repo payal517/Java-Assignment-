@@ -1,0 +1,37 @@
+// Name: Payal Priya
+// Question 4: Write a class for addition of time (hours, minutes, seconds)
+
+class Time {
+
+    int hours, minutes, seconds;
+
+    // Method to take input
+    void input(int h, int m, int s) {
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+
+    // Method to add two time objects
+    Time add(Time t) {
+
+        Time temp = new Time();
+
+        temp.seconds = this.seconds + t.seconds;
+
+        // convert seconds to minutes
+        temp.minutes = this.minutes + t.minutes + (temp.seconds / 60);
+        temp.seconds = temp.seconds % 60;
+
+        // convert minutes to hours
+        temp.hours = this.hours + t.hours + (temp.minutes / 60);
+        temp.minutes = temp.minutes % 60;
+
+        return temp;
+    }
+
+    // Display method
+    void display() {
+        System.out.println(hours + " hr " + minutes + " min " + seconds + " sec");
+    }
+}
